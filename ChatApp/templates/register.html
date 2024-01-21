@@ -1,0 +1,28 @@
+{% load static %}
+
+<link rel = "stylesheet" href = "{% static 'register.css' %}">
+
+<div class = "container">
+    <h1 class = "header"> Registeration Form </h1>
+    <form class = "form-content" action = "register" method = "POST">
+        {% csrf_token %}
+        <p>Full Name </p>
+        <input class = "content" type = "text" name = "membername" />
+        <br>
+        <p>Email </p>
+        <input class = "content" type = "email" name = "email" />
+        <br>
+        <p> Password</p>
+        <input class = "content" type="password" name = "password" />
+        <br>
+        <p>Confirm Password </p>
+        <input class = "content" type = "password" name = "c_password"/>
+        <br><br>
+        <input class = "register-button" type = "submit"  value = "Register" />
+        <br><br>
+    </form>
+    <p class = "extra">If You Already Have'n Account <a href="login"><span>Login</span></a></P>
+</div>
+{% for message in messages %}
+   <h5 class = "message-container"> {{message}}</h5>
+{% endfor %}

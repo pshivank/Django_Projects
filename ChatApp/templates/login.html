@@ -1,0 +1,19 @@
+{% load static %}
+
+<link rel = "stylesheet" href = "{% static 'register.css' %}">
+
+<div class = "container">
+    <h1 class = "header"> Login Form </h1>
+    <form class = "form-content" action = "chathome" method = "POST">
+        {% csrf_token %}
+        <p>Email </p>
+        <input class = "content" type = "email" name = "email" />
+        <br>
+        <p> Password</p>
+        <input class = "content" type="password" name = "password" />
+        <br><br><br><br>
+        <input class = "register-button" type = "submit"  value = "Login" />
+        <br><br><br>
+    </form>
+    <p class = "extra">If You Don't Have An Account <a href="register"><span>Register</span></a></P>
+</div>
